@@ -1,11 +1,12 @@
-##Notation:
+## Notation:
+
     (a)     Lowercase letter - Scalar value
     (a_)    Lowercase letter followed by Underline - Vector
     (A)     Uppercase letter - Matrix
 
 <br>
 
-##Single input neuron
+## Single input neuron
 
 Described by function:
     a = f(wp + b)
@@ -16,7 +17,7 @@ Described by function:
     f = activation/transfer function.
     a = output
     
-####Example:
+#### Example:
 
     std::function<float(float)> linearFunction = [](auto x) { return x; };
 
@@ -38,7 +39,7 @@ Described by function:
 
 <br>
 
-###Multi input neuron
+## Multi input neuron
 
 Described by function:
     a = f(WP + b)
@@ -50,7 +51,7 @@ Described by function:
     f = activation/transfer function.
     a = output
     
-####Example:
+#### Example:
 
     std::function<double(double)> sigmoid = [](auto x) { return 1 / (1 + exp(-x)); };
 
