@@ -75,9 +75,9 @@ Defined by function:
 
 <br>
 
-## Layer
+## Single Layer
 
-Defined by function:
+Defined by function:\
     A = f(WP + B)
     
     WP + B = W(1,1) * P(1,1) + B(1,1) + W(1,2) * P(1,2) + B(1,2) +  ...  + W(1,n) * P(1,n) + B(1,n)
@@ -89,9 +89,7 @@ Defined by function:
     
 W matrix rows represent neurons and columns represent the weights for given inputs which means that P (and B) matrix columns match those accordingly.
     
-#### Examples:
-
-##### Single Layer
+#### Example:
 
 Initialize a layer of 5 neurons and 2 inputs and sigmoid function as activation.\
 Layer weights and biases get assigned randomly.\
@@ -113,6 +111,15 @@ The output is 5x1 matrix where each row represents an output of a single neruon.
   0.361327
   
 <br>
+
+## Multi Layer
+
+Defined by function:\
+    A2 = f2(W2(f1(W1P1 + B1)) + B2)
+
+Output of lower layer, is passed to higher layer.
+
+#### Example:
   
 ##### Multi layer example by passing layer 1 output to layer 2
 
