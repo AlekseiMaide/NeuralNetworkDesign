@@ -93,8 +93,8 @@ W matrix rows represent neurons and columns represent the weights for given inpu
 
 Initialize a layer of 5 neurons and 2 inputs and sigmoid function as activation.\
 Layer weights and biases get assigned randomly.\
-Pass one 1 dimensional matricies (vectors) of 2 inputs to layer for processing.\
-Since there are 5 neurons, there is also 5 outputs.
+Pass a 1x2 matrix as input to layer for processing.\
+The output is 5x1 matrix where each row represents an output of a single neruon.
     
     std::function<double(double)> sigmoid = [](auto x) { return 1 / (1 + exp(-x)); };
 
@@ -109,5 +109,23 @@ Since there are 5 neurons, there is also 5 outputs.
   0.622769\
   0.394161\
   0.361327
+
+Multi layer example by passing layer 1 output to layer 2.\
+Layer 1 output is a 5x1 matrix, therefore layer 2 has to have 5 inputs and an arbitrary numbers of neurons.\
+Layer 2 requires input as 1x5 matrix, therefore layer 1 output matrix is transposed.\
+Layer 2 output is a 3x1 matrix, where each row represents an output of a single neuron.
+  
+    std::function<double(double)> sigmoid = [](auto x) { return 1 / (1 + exp(-x)); };
+
+    Layer layerOne(5, 2, sigmoid);
+    Eigen::MatrixXd inputMatrix = Eigen::MatrixXd::Random(1, 2);
+    Eigen::MatrixXd layerOneOutput = layerOne.processInput(inputMatrix);
+
+    std::cout << "LAYER 1 OUTPUT:\n" << layerOneOutput << std::endl;
+
+    Layer layerTwo(3, 5, sigmoid);
+    Eigen::MatrixXd layerTwoOutput = layerTwo.processInput(layerOneOutput.transpose());
+
+    std::cout << "LAYER 2 OUTPUT:\n" << layerTwoOutput << std::endl;
 
 <br>
