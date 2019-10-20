@@ -21,7 +21,7 @@ Defined by function:
     
 #### Example:
 
-    std::function<float(float)> linearFunction = [](auto x) { return x; };
+    std::function<float(float)> linear = [](auto x) { return x; };
 
     SingleInputNeuron neuron;
 
@@ -31,7 +31,7 @@ Defined by function:
 
     std::cout << "NEURON SUM IS: " << neuron.getNeuronSum() << std::endl;
 
-    neuron.setActivationFunction(linearFunction);
+    neuron.setActivationFunction(linear);
     neuron.activate();
 
     std::cout << "NEURON OUTPUT IS: " << neuron.getOutput() << std::endl;
@@ -133,10 +133,11 @@ Output of lower layer, is passed to higher layer.
 ##### Multi layer example by passing layer 1 output to layer 2
 
 Layer 1 output is a 5x1 matrix, therefore layer 2 has to have 5 inputs and an arbitrary numbers of neurons.\
-Layer 2 requires input as 1x5 matrix, therefore layer 1 output matrix is transposed.\
+Layer 2 requires input as 1x5 matrix, therefore Layer 1 output matrix is transposed.\
 Layer 2 output is a 3x1 matrix, where each row represents an output of a single neuron.
-  
+
     std::function<double(double)> sigmoid = [](auto x) { return 1 / (1 + exp(-x)); };
+    std::function<double(double)> linear = [](auto x) { return x; };
 
     Layer layerOne(5, 2, sigmoid);
     Eigen::MatrixXd inputMatrix = Eigen::MatrixXd::Random(1, 2);
@@ -144,10 +145,12 @@ Layer 2 output is a 3x1 matrix, where each row represents an output of a single 
 
     std::cout << "LAYER 1 OUTPUT:\n" << layerOneOutput << std::endl;
 
-    Layer layerTwo(3, 5, sigmoid);
+    Layer layerTwo(3, 5, linear);
     Eigen::MatrixXd layerTwoOutput = layerTwo.processInput(layerOneOutput.transpose());
 
     std::cout << "LAYER 2 OUTPUT:\n" << layerTwoOutput << std::endl;
+
+_Note: Layer 1 is using sigmoid and Layer 2 is using linear as activation function._
 
 > LAYER 1 OUTPUT:\
   0.488715\
@@ -156,9 +159,9 @@ Layer 2 output is a 3x1 matrix, where each row represents an output of a single 
   0.394161\
   0.361327
   
->  LAYER 2 OUTPUT:\
-  0.972445\
-  0.919742\
-  0.761817
+> LAYER 2 OUTPUT:\
+  3.56363\
+  2.43884\
+  1.16267
 
 <br>
