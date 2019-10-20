@@ -7,7 +7,7 @@
 
 ## Single input neuron
 
-Described by function:
+Defined by function:
     a = f(wp + b)
     
     w = weight
@@ -40,7 +40,7 @@ Described by function:
 
 ## Multi input neuron
 
-Described by function:
+Defined by function:
     a = f(WP + b)
     
     WP = W(1,1) * P(1,1) + W(1,2) * P(1,2) +  ...  + W(1,n) * P(1,n)

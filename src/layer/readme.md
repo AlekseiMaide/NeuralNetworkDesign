@@ -7,7 +7,7 @@
 
 ## Layer
 
-Described by function:
+Defined by function:
     A = f(WP + B)
     
     WP + B = W(1,1) * P(1,1) + B(1,1) + W(1,2) * P(1,2) + B(1,2) +  ...  + W(1,n) * P(1,n) + B(1,n)
@@ -17,11 +17,14 @@ Described by function:
     f = activation/transfer function.
     A = Output Matrix
     
+W matrix rows represent neurons and columns represent the weights for given inputs which means that P (and B) matrix columns match those accordingly.
+    
 #### Example:
 
 Initialize a layer of 5 neurons and 2 inputs and sigmoid function as activation.\
 Layer weights and biases get assigned randomly.\
-Pass one 1 dimensional matricies (vectors) of 2 inputs to layer for processing.
+Pass one 1 dimensional matricies (vectors) of 2 inputs to layer for processing.\
+Since there are 5 neurons, there is also 5 outputs.
     
     std::function<double(double)> sigmoid = [](auto x) { return 1 / (1 + exp(-x)); };
 
