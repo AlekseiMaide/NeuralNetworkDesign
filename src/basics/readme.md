@@ -1,7 +1,9 @@
 ## Notation:
 
-    (a)     Lowercase letter - Scalar value
-    (A)     Uppercase letter - Matrix or Vector
+    (a)         Lowercase letter - Scalar value
+    (A)         Uppercase letter - Matrix or Vector
+    (A1)        Matrix with index
+    (A(r,c))    Matrix row and column specified
 
 <br>
 
