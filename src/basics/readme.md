@@ -8,6 +8,7 @@
 ## Single input neuron
 
 Defined by function:
+    
     a = f(wp + b)
     
     w = weight
@@ -41,6 +42,7 @@ Defined by function:
 ## Multi input neuron
 
 Defined by function:
+    
     a = f(WP + b)
     
     WP = W(1,1) * P(1,1) + W(1,2) * P(1,2) +  ...  + W(1,n) * P(1,n)
@@ -77,7 +79,8 @@ Defined by function:
 
 ## Single Layer
 
-Defined by function:\
+Defined by function:
+
     A = f(WP + B)
     
     WP + B = W(1,1) * P(1,1) + B(1,1) + W(1,2) * P(1,2) + B(1,2) +  ...  + W(1,n) * P(1,n) + B(1,n)
@@ -114,8 +117,12 @@ The output is 5x1 matrix where each row represents an output of a single neruon.
 
 ## Multi Layer
 
-Defined by function:\
+Defined by function:
+
     A2 = f2(W2(f1(W1P1 + B1)) + B2)
+    
+    A1 = f1(W1 * P1 + B1)
+    A2 = f2(W2 * A1 + B1)
 
 Output of lower layer, is passed to higher layer.
 
