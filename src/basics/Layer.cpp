@@ -19,9 +19,9 @@ Layer::Layer(int neuronCount, int inputCount, std::function<double(double)> acti
 }
 
 Eigen::MatrixXd Layer::processInput(Eigen::MatrixXd inputMatrix) {
-    // ForEach neuron (in mWeights)
+    // ForEach basics (in mWeights)
     // 1. Sum products of weights and inputs.
-    // 2. Add neuron bias.
+    // 2. Add basics bias.
     // 3. Use activation function.
 
     Eigen::MatrixXd output(mNeuronCount, 1);
