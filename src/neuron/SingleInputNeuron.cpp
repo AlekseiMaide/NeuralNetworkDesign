@@ -3,10 +3,7 @@
 
 SingleInputNeuron::SingleInputNeuron()
         : mWeight(0.5),
-          mBias(0.64) {
-
-    // Todo: Generate a random weight?
-}
+          mBias(0.64) {}
 
 float SingleInputNeuron::getWeight() const {
     return mWeight;

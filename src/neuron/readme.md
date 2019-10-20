@@ -1,8 +1,7 @@
 ## Notation:
 
     (a)     Lowercase letter - Scalar value
-    (a_)    Lowercase letter followed by Underline - Vector
-    (A)     Uppercase letter - Matrix
+    (A)     Uppercase letter - Matrix or Vector
 
 <br>
 
