@@ -43,7 +43,7 @@ Described by function:
 Described by function:
     a = f(WP + b)
     
-    WP = W(1,1) * P(1,1) + W(1,2) + P(1,2) +  ...  + W(1,n) + P(1,n)
+    WP = W(1,1) * P(1,1) + W(1,2) * P(1,2) +  ...  + W(1,n) * P(1,n)
     W = Vector of weights
     P = Vector of inputs
     b = bias
