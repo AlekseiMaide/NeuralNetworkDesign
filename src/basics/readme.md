@@ -154,8 +154,9 @@ Layer 2 output is a 3x1 matrix, where each row represents an output of a single 
   0.707844\
   0.622769\
   0.394161\
-  0.361327\
-  LAYER 2 OUTPUT:\
+  0.361327
+  
+>  LAYER 2 OUTPUT:\
   0.972445\
   0.919742\
   0.761817
