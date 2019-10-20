@@ -91,6 +91,8 @@ W matrix rows represent neurons and columns represent the weights for given inpu
     
 #### Examples:
 
+##### Single Layer
+
 Initialize a layer of 5 neurons and 2 inputs and sigmoid function as activation.\
 Layer weights and biases get assigned randomly.\
 Pass a 1x2 matrix as input to layer for processing.\
@@ -109,8 +111,11 @@ The output is 5x1 matrix where each row represents an output of a single neruon.
   0.622769\
   0.394161\
   0.361327
+  
+<br>
+  
+##### Multi layer example by passing layer 1 output to layer 2
 
-Multi layer example by passing layer 1 output to layer 2.\
 Layer 1 output is a 5x1 matrix, therefore layer 2 has to have 5 inputs and an arbitrary numbers of neurons.\
 Layer 2 requires input as 1x5 matrix, therefore layer 1 output matrix is transposed.\
 Layer 2 output is a 3x1 matrix, where each row represents an output of a single neuron.
