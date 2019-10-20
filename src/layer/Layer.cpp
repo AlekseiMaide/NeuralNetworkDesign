@@ -9,7 +9,7 @@ Layer::Layer(int neuronCount, int inputCount, std::function<double(double)> acti
     mActivationFunction = std::move(activationFunction);
 
     // Initialize weights and bias to range 0 - 1
-    // Eigen::MatrixXd::Random gives range(-1;1) therefore add 1 and divice by 2.
+    // Eigen::MatrixXd::Random gives range(-1;1) therefore add 1 and divide by 2.
 
     mWeights = Eigen::MatrixXd::Random(neuronCount, inputCount);
     mWeights = (mWeights + Eigen::MatrixXd::Constant(neuronCount, inputCount, 1.0))* 0.5;

@@ -18,6 +18,10 @@ Described by function:
     A = Output Matrix
     
 #### Example:
+
+Initialize a layer of 5 neurons and 2 inputs and sigmoid function as activation.\
+Layer weights and biases get assigned randomly.\
+Pass one 1 dimensional matricies (vectors) of 2 inputs to layer for processing.
     
     std::function<double(double)> sigmoid = [](auto x) { return 1 / (1 + exp(-x)); };
 
