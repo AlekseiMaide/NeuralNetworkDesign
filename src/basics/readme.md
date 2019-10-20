@@ -133,4 +133,15 @@ Layer 2 output is a 3x1 matrix, where each row represents an output of a single 
 
     std::cout << "LAYER 2 OUTPUT:\n" << layerTwoOutput << std::endl;
 
+> LAYER 1 OUTPUT:\
+  0.488715\
+  0.707844\
+  0.622769\
+  0.394161\
+  0.361327\
+  LAYER 2 OUTPUT:\
+  0.972445\
+  0.919742\
+  0.761817
+
 <br>
