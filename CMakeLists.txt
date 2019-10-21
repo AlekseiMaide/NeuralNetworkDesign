@@ -10,5 +10,14 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 
 include_directories(includes)
 
-add_executable(NeuralNetworkDesign main.cpp src/basics/SingleInputNeuron.cpp src/basics/SingleInputNeuron.h src/basics/MultiInputNeuron.cpp src/basics/MultiInputNeuron.h src/activation_functions/ActivationFunction.cpp src/activation_functions/ActivationFunction.h src/basics/Layer.cpp src/basics/Layer.h)
+add_executable(NeuralNetworkDesign main.cpp
+        src/basics/SingleInputNeuron.cpp
+        src/basics/SingleInputNeuron.h
+        src/basics/MultiInputNeuron.cpp
+        src/basics/MultiInputNeuron.h
+        src/basics/Layer.cpp
+        src/basics/Layer.h
+        src/activation_functions/ActivationFunction.cpp
+        src/activation_functions/ActivationFunction.h
+)
 target_compile_definitions(NeuralNetworkDesign PUBLIC VERSION=0.1)

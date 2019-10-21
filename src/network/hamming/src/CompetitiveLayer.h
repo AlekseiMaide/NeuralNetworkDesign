@@ -1,0 +1,10 @@
+#ifndef HAMMING_COMPETITIVELAYER_H
+#define HAMMING_COMPETITIVELAYER_H
+
+
+class CompetitiveLayer {
+
+};
+
+
+#endif //HAMMING_COMPETITIVELAYER_H
