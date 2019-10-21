@@ -2,6 +2,8 @@
 
 The network is called hamming network due to the fact that the output will be pattern with closest [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) relative to the input.
 
+Network is used in binary pattern matching problems.
+
 #### FeedForward layer.
 
 Weights are initialized to the PATTERNS we are trying to match.\
