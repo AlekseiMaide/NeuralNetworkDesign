@@ -21,9 +21,6 @@ Eigen::MatrixXd CompetitiveLayer::processInput(Eigen::MatrixXd inputMatrix) {
 
     int recurenceNumber = 0;
 
-    std::cout << "INPUT TO RECURENT LAYER: \n";
-    std::cout << inputMatrix << std::endl;
-
     while (true) {
 
         if (recurenceNumber == 0) {

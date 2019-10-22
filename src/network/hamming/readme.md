@@ -46,61 +46,52 @@ Attempts to match supplied pattern to the pattern that has closest hamming dista
 
     competitiveLayer.processInput(firstLayerOutput);
     
-> FeedForward layer weigths:
-   1 1 0 1
-  1 1 0 0
-  0 1 0 0
-  1 0 1 0
-  FeedForward layer bias:
-   4
-  4
-  4
-  4
-  FeedForward layer output:
-   5
-  6
-  4
-  4
-  Recurrent layer weigths:
-    1.25 -0.25 -0.25 -0.25
-  -0.25  1.25 -0.25 -0.25
-  -0.25 -0.25  1.25 -0.25
-  -0.25 -0.25 -0.25  1.25
-  INPUT TO RECURENT LAYER:
-  5
-  6
-  4
-  4
-  Recurrence: 0 Output is:
-  2.75
-  4.25
-  1.25
-  1.25
-  Recurrence: 1 Output is:
-  1.75
-     4
-     0
-     0
-  Recurrence: 2 Output is:
-  1.1875
-  4.5625
-       0
-       0
-  Recurrence: 3 Output is:
-  0.34375
-  5.40625
-        0
-        0
-  Recurrence: 4 Output is:
-        0
-  6.67188
-        0
-        0
+> FeedForward layer weigths:\
+    1 1 0 1\
+    1 1 0 0\
+    0 1 0 0\
+    1 0 1 0\
+  
+> FeedForward layer bias: 4 4 4 4
+
+> FeedForward layer output: 5 6 4 4
+
+> Recurrent layer weigths:\
+    1.25 -0.25 -0.25 -0.25\
+    -0.25  1.25 -0.25 -0.25\
+    -0.25 -0.25  1.25 -0.25\
+    -0.25 -0.25 -0.25  1.25
+
+> Recurrence: 0 Output is:\
+    2.75\
+    4.25\
+    1.25\
+    1.25\
+  Recurrence: 1 Output is:\
+    1.75\
+    4\
+    0\
+    0\
+  Recurrence: 2 Output is:\
+    1.1875\
+    4.5625\
+    0\
+    0\
+  Recurrence: 3 Output is:\
+    0.34375\
+    5.40625\
+    0\
+    0\
+  Recurrence: 4 Output is:\
+    0\
+    6.67188\
+    0\
+    0
 
 Due to error correcting nature of hamming code, it has to contain at least k+1 difference it patterns, otherwise it is unable to decide.
 
-> Recurrence: 3 Output is:
-  2.8125
-  2.8125
-       0
-       0
+> Recurrence: 3 Output is:\
+    2.8125\
+    2.8125\
+    0\
+    0
