@@ -50,7 +50,7 @@ Attempts to match supplied pattern to the pattern that has closest hamming dista
     1 1 0 1\
     1 1 0 0\
     0 1 0 0\
-    1 0 1 0\
+    1 0 1 0
   
 > FeedForward layer bias: 4 4 4 4
 
