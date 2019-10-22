@@ -14,12 +14,10 @@ Activation function is linear.
 #### Recurrent "Competitive" layer.
 
 Has same amount of neurons as the previous layer.\
-Will continue processing the input until the values converge or tie breaking stop condition is met.\
-Activation function is Positive linear.
+Will continue processing the input until the values converge (There will be only one none zero output) or tie breaking stop condition is met.\
+Weights matrix has an identity matrix diagonal and the rest of the values have to be lower than - 1 / (pattern count), which results in every feature being gradually reduced.\
+Activation function is Positive linear, which eliminates the values that are moving in the wrong direction.
 
-
-
-Weights matrix has a diagonal values that are in range 0 < n < 1 (One for each feature)
 
 #### Examples:
 
