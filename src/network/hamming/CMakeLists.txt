@@ -15,5 +15,4 @@ add_executable(hamming main.cpp
         src/CompetitiveLayer.h
         src/FeedForwardLayer.cpp
         src/FeedForwardLayer.h
-        src/Network.cpp
-        src/Network.h)
+        )

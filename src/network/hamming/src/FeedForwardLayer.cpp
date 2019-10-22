@@ -7,6 +7,9 @@ FeedForwardLayer::FeedForwardLayer(Eigen::MatrixXd patterns) {
     mWeights = patterns;
     mActivationFunction = [](auto x) { return x; }; // Linear function
     mBias = Eigen::MatrixXd::Constant(patterns.rows(), 1, patterns.cols());
+
+    std::cout << "FeedForward layer weigths:\n " << mWeights << std::endl;
+    std::cout << "FeedForward layer bias:\n " << mBias << std::endl;
 }
 
 Eigen::MatrixXd FeedForwardLayer::processInput(Eigen::MatrixXd inputMatrix) {
@@ -19,18 +22,12 @@ Eigen::MatrixXd FeedForwardLayer::processInput(Eigen::MatrixXd inputMatrix) {
     auto featureCount = (int)mWeights.cols();
 
     Eigen::MatrixXd output(neuronCount, 1);
-    double neuronSum{};
 
-    for (int neuronIndex = 0; neuronIndex < neuronCount; neuronIndex++) {
+    output = Eigen::Product(mWeights.transpose(), inputMatrix);
+    output += mBias;
+    output = output.unaryExpr(mActivationFunction);
 
-        neuronSum = 0;
-
-        for (int featurePosition = 0; featurePosition < featureCount; featurePosition++) {
-            neuronSum += mWeights(neuronIndex, featurePosition) * inputMatrix(0, featurePosition) + mBias(neuronIndex, 0);
-        }
-
-        output(neuronIndex, 0) = mActivationFunction(neuronSum);
-    }
+    std::cout << "FeedForward layer output:\n " << output << std::endl;
 
     return output;
 }

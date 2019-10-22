@@ -5,16 +5,14 @@
 
 class CompetitiveLayer {
 public:
-    CompetitiveLayer(int neuronCount); // Todo: Pass input and start processing or?
-
-    // Number of neurons matches previous layer.
-    // Weights matrix has a diagonal values that are in range 0 < n < 1 (One for each feature)
+    CompetitiveLayer(int neuronCount);
 
     Eigen::MatrixXd processInput(Eigen::MatrixXd inputMatrix);
 private:
     Eigen::MatrixXd mWeights;
-    void competeSingleIteration();
-    bool hasConverged();
+    std::function<double(double)> mActivationFunction;
+
+    bool hasConverged(Eigen::MatrixXd matrix);
 };
 
 

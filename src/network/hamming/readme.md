@@ -13,10 +13,96 @@ Activation function is linear.
 
 #### Recurrent "Competitive" layer.
 
-Has same amount of neurons as the previous layer.
-
-Will continue processing the input until the values converge.
-
+Has same amount of neurons as the previous layer.\
+Will continue processing the input until the values converge or tie breaking stop condition is met.\
 Activation function is Positive linear.
 
 
+
+Weights matrix has a diagonal values that are in range 0 < n < 1 (One for each feature)
+
+#### Examples:
+
+Attempts to match supplied pattern to the pattern that has closest hamming distance.
+
+    int patternCount = 4;
+    int featuresPerPattern = 4;
+
+    Eigen::MatrixXd patterns(patternCount, featuresPerPattern);
+
+    Eigen::VectorXd apple(featuresPerPattern);          apple << 1, 1, 0, 1;
+    Eigen::VectorXd orange(featuresPerPattern);         orange << 1, 1, 1, 0;
+    Eigen::VectorXd pear(featuresPerPattern);           pear << 0, 0, 0, 1;
+    Eigen::VectorXd watermelon(featuresPerPattern);     watermelon << 1, 0, 0, 0;
+
+    patterns << apple, orange, pear, watermelon;
+
+    FeedForwardLayer feedForwardLayer(patterns);
+
+    Eigen::VectorXd whatIsThisPattern(featuresPerPattern);
+    whatIsThisPattern << 0, 1, 1, 0;
+
+    Eigen::MatrixXd firstLayerOutput = feedForwardLayer.processInput(whatIsThisPattern);
+
+    CompetitiveLayer competitiveLayer(patternCount);
+
+    competitiveLayer.processInput(firstLayerOutput);
+    
+> FeedForward layer weigths:
+   1 1 0 1
+  1 1 0 0
+  0 1 0 0
+  1 0 1 0
+  FeedForward layer bias:
+   4
+  4
+  4
+  4
+  FeedForward layer output:
+   5
+  6
+  4
+  4
+  Recurrent layer weigths:
+    1.25 -0.25 -0.25 -0.25
+  -0.25  1.25 -0.25 -0.25
+  -0.25 -0.25  1.25 -0.25
+  -0.25 -0.25 -0.25  1.25
+  INPUT TO RECURENT LAYER:
+  5
+  6
+  4
+  4
+  Recurrence: 0 Output is:
+  2.75
+  4.25
+  1.25
+  1.25
+  Recurrence: 1 Output is:
+  1.75
+     4
+     0
+     0
+  Recurrence: 2 Output is:
+  1.1875
+  4.5625
+       0
+       0
+  Recurrence: 3 Output is:
+  0.34375
+  5.40625
+        0
+        0
+  Recurrence: 4 Output is:
+        0
+  6.67188
+        0
+        0
+
+Due to error correcting nature of hamming code, it has to contain at least k+1 difference it patterns, otherwise it is unable to decide.
+
+> Recurrence: 3 Output is:
+  2.8125
+  2.8125
+       0
+       0

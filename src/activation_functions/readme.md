@@ -14,6 +14,4 @@
     
 #### Positive linear
 
-    0 <= n <= 1     -> n
-    n >= 0          -> 0
-    n <= 1          -> 1
+    If n <= 0 then 0 else n.
